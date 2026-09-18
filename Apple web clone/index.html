@@ -1,0 +1,715 @@
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* NAVBAR */
+      nav {
+        background-color: rgba(245, 245, 247, 0.8);
+        backdrop-filter: blur(10px);
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      nav img {
+        width: 35px;
+        height: 20px;
+      }
+
+      /* HERO */
+      .hero {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .hero h1,
+      .hero p {
+        color: white;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        transform: translateY(-200px);
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 28px;
+        margin: 8px 0 0 0;
+      }
+
+      .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .hero-buttons button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .hero-buttons button:first-child {
+        background-color: #0071e3;
+        color: white;
+      }
+
+      .hero-buttons button:last-child {
+        background-color: white;
+        color: #0071e3;
+      }
+
+      /* IPHONE DUO */
+      .duo-section {
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .duo-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .duo-content h1,
+      .duo-content p {
+        color: black;
+      }
+
+      .duo-content {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+      }
+
+      .duo-content h1 {
+        font-size: 52px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        margin: 0;
+      }
+
+      .duo-content p {
+        font-size: 35px;
+        font-weight: 400;
+        letter-spacing: -0.3px;
+        margin: 6px 0 0 0;
+      }
+
+      .duo-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .duo-buttons button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .duo-buttons button:first-child {
+        background-color: #0071e3;
+        color: white;
+      }
+
+      .duo-buttons button:last-child {
+        background-color: white;
+        color: #0071e3;
+      }
+
+      /* APPLE WATCH SERIES */
+      .watch-series {
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .watch-series img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .watch-title {
+        position: absolute;
+        top: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+        color: white;
+        width: 100%;
+      }
+      .watch-title h1 {
+        font-size: 42px;
+        font-weight: 400;
+        letter-spacing: -1px;
+        margin: 0;
+      }
+
+      .watch-title h1 span {
+        font-weight: 700;
+      }
+
+      .watch-content {
+        position: absolute;
+        top: 390px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+        color: white;
+      }
+
+      .watch-content p {
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      .watch-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .watch-buttons button {
+        padding: 11px 21px;
+        border-radius: 24px;
+        border: none;
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .watch-buttons button:first-child {
+        background-color: #0071e3;
+        color: white;
+      }
+
+      .watch-buttons button:last-child {
+        background-color: white;
+        color: #0071e3;
+      }
+
+      /* PRODUCT GRID */
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 6px;
+      }
+
+      .product-card {
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-content {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 100%;
+        text-align: center;
+      }
+
+      .product-card:nth-child(2) .product-content {
+        top: 370px;
+      }
+
+      /* DARK BACKGROUND CARDS */
+      .product-card:nth-child(1) .product-content,
+      .product-card:nth-child(2) .product-content {
+        color: white;
+      }
+
+      /* LIGHT BACKGROUND CARDS */
+      .product-card:nth-child(3) .product-content,
+      .product-card:nth-child(4) .product-content {
+        color: black;
+      }
+
+      .product-content h1 {
+        font-size: 40px;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .product-content h1 span {
+        font-weight: 700;
+      }
+
+      .product-content p {
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.3;
+        margin: 8px 0 0 0;
+      }
+
+      .product-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .product-buttons button {
+        padding: 11px 21px;
+        border-radius: 24px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .product-buttons button:first-child {
+        background-color: #0071e3;
+        color: white;
+      }
+
+      .product-buttons button:last-child {
+        background-color: white;
+        color: #0071e3;
+      }
+
+      /* FOOTNOTES */
+      .footnotes {
+        background-color: #f5f5f7;
+        padding: 40px 18%;
+        color: #6e6e73;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .footnotes p {
+        margin: 0 0 14px 0;
+      }
+
+      .footnotes a {
+        color: #424245;
+        text-decoration: underline;
+      }
+      /* FOOTER LINKS */
+      .footer-links {
+        background-color: #f5f5f7;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+        padding: 20px 18% 40px 18%;
+      }
+
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-column h3 {
+        font-size: 12px;
+        font-weight: 600;
+        color: #1d1d1f;
+        margin: 0 0 10px 0;
+      }
+
+      .footer-column h3:not(:first-child) {
+        margin-top: 24px;
+      }
+
+      .footer-column a {
+        font-size: 12px;
+        color: #6e6e73;
+        text-decoration: none;
+        margin-bottom: 8px;
+      }
+
+      .footer-column a:hover {
+        text-decoration: underline;
+      }
+
+      .clone-notice {
+        background-color: #f5f5f7;
+        color: #6e6e73;
+        text-align: center;
+        font-size: 12px;
+        padding: 20px;
+        border-top: 1px solid #d2d2d7;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <a href="#">
+        <img src="images/logo.png" alt="Apple" />
+      </a>
+
+      <a href="#">Store</a>
+      <a href="#">Mac</a>
+      <a href="#">iPad</a>
+      <a href="#">iPhone</a>
+      <a href="#">Watch</a>
+      <a href="#">AirPods</a>
+      <a href="#">TV & Home</a>
+      <a href="#">Entertainment</a>
+      <a href="#">Accessories</a>
+      <a href="#">Support</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <video src="videos/hero.mp4" autoplay muted loop playsinline></video>
+
+      <div class="hero-content">
+        <h1>iPhone 18 Pro</h1>
+        <p>Pro further.</p>
+
+        <div class="hero-buttons">
+          <button>Learn more</button>
+          <button>Buy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- IPHONE DUO -->
+    <section class="duo-section">
+      <img src="images/iphone-duo.jpg" alt="iPhone Duo" />
+
+      <div class="duo-content">
+        <h1>iPhone Duo</h1>
+        <p>Hello, hello.</p>
+
+        <div class="duo-buttons">
+          <button>Learn more</button>
+          <button>Buy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLE WATCH SERIES -->
+    <section class="watch-series">
+      <img src="images/Watch series.jpg" alt="Apple Watch" />
+
+      <div class="watch-title">
+        <h1><span>WATCH</span> SERIES 12</h1>
+      </div>
+
+      <div class="watch-content">
+        <p>The most accurate heart rate sensing in a wearable.</p>
+
+        <div class="watch-buttons">
+          <button>Learn more</button>
+          <button>Buy</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-grid">
+      <!-- WATCH ULTRA -->
+      <div class="product-card">
+        <img src="images/watch ultra 4.jpg" alt="Apple Watch Ultra 4" />
+
+        <div class="product-content">
+          <h1><span>WATCH</span> ULTRA 4</h1>
+          <p>A battery you can't outrun.</p>
+
+          <div class="product-buttons">
+            <button>Learn more</button>
+            <button>Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AIRPODS -->
+      <div class="product-card">
+        <img src="images/airpod 5.jpg" alt="AirPods 5" />
+
+        <div class="product-content">
+          <h1>AirPods 5</h1>
+          <p>
+            Discover the magic of<br />
+            Active Noise Cancellation.
+          </p>
+
+          <div class="product-buttons">
+            <button>Learn more</button>
+            <button>Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ICLOUD -->
+      <div class="product-card">
+        <img src="images/icloud+.jpg" alt="iCloud+" />
+
+        <div class="product-content">
+          <h1>iCloud+</h1>
+          <p>
+            Supercharge your iPhone with added<br />
+            storage, privacy features, and more.
+          </p>
+
+          <div class="product-buttons">
+            <button>Learn more</button>
+            <button>Try it free</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MACBOOK -->
+      <div class="product-card">
+        <img src="images/macbook air.jpg" alt="MacBook Air" />
+
+        <div class="product-content">
+          <h1>MacBook Air</h1>
+          <p>Now supercharged by M5.</p>
+
+          <div class="product-buttons">
+            <button>Learn more</button>
+            <button>Buy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTNOTES -->
+    <section class="footnotes">
+      <p>
+        * Available for Qualified Purchasers only. Qualified Purchasers receive
+        an Apple Gift Card when they purchase an eligible Mac or iPad (“Eligible
+        Product”) at a Qualifying Location through September 24, 2026. Gift card
+        values may vary by Eligible Product. Customers will receive a discount
+        equal to the value of the Apple Gift Card off the price of the Eligible
+        Product, but will be charged for all items in their cart, including the
+        Apple Gift Card. Only one Apple Gift Card per Eligible Product per
+        Qualified Purchaser. Offer subject to availability. While supplies last.
+        Additional restrictions apply.
+        <a href="#">View full offer terms here.</a>
+      </p>
+
+      <p>
+        1. Based on data from an Apple-conducted study of heart rate accuracy,
+        during July and August 2026, utilizing commercially available
+        best-selling wearables available as of June 2026. For more information,
+        visit
+        <a href="#">apple.com/HRAccuracy</a>.
+      </p>
+
+      <p>
+        2. For iCloud feature and system requirements, see
+        <a href="#">support.apple.com/118308</a>. Some features require a Wi-Fi
+        connection. Access to some services is limited to 10 devices. Some
+        features are not available in all countries or regions.
+      </p>
+
+      <p>
+        3. Apple Upgrade is a device leasing program available in the U.S.
+        (excluding U.S. territories). Leases are provided by Klarna: subject to
+        eligibility and credit approval, including final approval at checkout.
+        To be eligible, you must be a U.S. resident, at least 18 years old (or
+        the legal age in your state), have an accepted credit or debit card, and
+        have an Apple Account. Additional eligibility criteria apply. Device
+        must be in good condition upon return; damage fees may apply.
+      </p>
+
+      <p>
+        To access and use all Apple Card features and products available only to
+        Apple Card users, you must add Apple Card to Wallet on an iPhone or iPad
+        that supports and has the latest version of iOS or iPadOS. Apple Card is
+        subject to credit approval, available only for qualifying applicants in
+        the United States, and issued by Goldman Sachs Bank USA, Salt Lake City
+        Branch.
+      </p>
+
+      <p>
+        A subscription is required for Apple Arcade, Apple Fitness+, Apple
+        Music, and Apple TV.
+      </p>
+
+      <p>
+        Features are subject to change. Some features, applications, and
+        services may not be available in all regions or all languages.
+      </p>
+    </section>
+
+    <!-- FOOTER LINKS -->
+    <footer class="footer-links">
+      <!-- COLUMN 1 -->
+      <div class="footer-column">
+        <h3>Shop and Learn</h3>
+        <a href="#">Store</a>
+        <a href="#">Mac</a>
+        <a href="#">iPad</a>
+        <a href="#">iPhone</a>
+        <a href="#">Watch</a>
+        <a href="#">Vision</a>
+        <a href="#">AirPods</a>
+        <a href="#">TV & Home</a>
+        <a href="#">AirTag</a>
+        <a href="#">Accessories</a>
+        <a href="#">Gift Cards</a>
+
+        <h3>Apple Wallet</h3>
+        <a href="#">Wallet</a>
+        <a href="#">Apple Card</a>
+        <a href="#">Apple Pay</a>
+        <a href="#">Apple Cash</a>
+      </div>
+
+      <!-- COLUMN 2 -->
+      <div class="footer-column">
+        <h3>Account</h3>
+        <a href="#">Manage Your Apple Account</a>
+        <a href="#">Apple Store Account</a>
+        <a href="#">iCloud.com</a>
+
+        <h3>Entertainment</h3>
+        <a href="#">Apple One</a>
+        <a href="#">Apple TV</a>
+        <a href="#">Apple Music</a>
+        <a href="#">Apple Arcade</a>
+        <a href="#">Apple Fitness+</a>
+        <a href="#">Apple News+</a>
+        <a href="#">Apple Podcasts</a>
+        <a href="#">Apple Books</a>
+        <a href="#">App Store</a>
+      </div>
+
+      <!-- COLUMN 3 -->
+      <div class="footer-column">
+        <h3>Apple Store</h3>
+        <a href="#">Find a Store</a>
+        <a href="#">Genius Bar</a>
+        <a href="#">Today at Apple</a>
+        <a href="#">Group Reservations</a>
+        <a href="#">Apple Camp</a>
+        <a href="#">Apple Store App</a>
+        <a href="#">Certified Refurbished</a>
+        <a href="#">Apple Upgrade</a>
+        <a href="#">Apple Trade In</a>
+        <a href="#">Financing</a>
+        <a href="#">Carrier Deals at Apple</a>
+        <a href="#">Order Status</a>
+        <a href="#">Shopping Help</a>
+      </div>
+
+      <!-- COLUMN 4 -->
+      <div class="footer-column">
+        <h3>For Business</h3>
+        <a href="#">Apple and Business</a>
+        <a href="#">Shop for Business</a>
+
+        <h3>For Education</h3>
+        <a href="#">Apple and Education</a>
+        <a href="#">Shop for K-12</a>
+        <a href="#">Shop for College</a>
+
+        <h3>For Healthcare</h3>
+        <a href="#">Apple and Healthcare</a>
+
+        <h3>For Government</h3>
+        <a href="#">Apple and Government</a>
+        <a href="#">Shop for Veterans and Military</a>
+        <a href="#">Shop for State and Local Employees</a>
+        <a href="#">Shop for Federal Employees</a>
+      </div>
+
+      <!-- COLUMN 5 -->
+      <div class="footer-column">
+        <h3>Apple Values</h3>
+        <a href="#">Accessibility</a>
+        <a href="#">Education</a>
+        <a href="#">Environment</a>
+        <a href="#">Inclusion and Diversity</a>
+        <a href="#">Privacy</a>
+        <a href="#">Racial Equity and Justice</a>
+        <a href="#">Supply Chain Innovation</a>
+
+        <h3>About Apple</h3>
+        <a href="#">Newsroom</a>
+        <a href="#">Apple Leadership</a>
+        <a href="#">Career Opportunities</a>
+        <a href="#">Investors</a>
+        <a href="#">Ethics & Compliance</a>
+        <a href="#">Events</a>
+        <a href="#">Contact Apple</a>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href="#"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+      });
+    </script>
+    <div class="clone-notice">
+      This website is a clone of Apple's website, created for learning purposes.
+    </div>
+  </body>
+</html>
