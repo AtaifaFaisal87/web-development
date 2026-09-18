@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Portal</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>University Scholarship Portal</h1>
+        <p>Find scholarships and apply easily.</p>
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#scholarships">Scholarships</a>
+        <a href="#application">Apply</a>
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HOME SECTION -->
+        <section id="home">
+            <h2>Welcome</h2>
+
+            <p>
+                Welcome to our
+                <span class="highlight">Scholarship Portal</span>.
+            </p>
+
+            <p>
+                Explore available scholarships and submit your application.
+            </p>
+        </section>
+
+
+        <!-- SCHOLARSHIPS SECTION -->
+        <section id="scholarships">
+
+            <h2>Available Scholarships</h2>
+
+            <!-- SCHOLARSHIP TABLE -->
+            <table>
+
+                <tr>
+                    <th>Scholarship</th>
+                    <th>Amount</th>
+                    <th>Deadline</th>
+                </tr>
+
+                <tr>
+                    <td>Merit Scholarship</td>
+                    <td>100,000 PKR</td>
+                    <td>30 September</td>
+                </tr>
+
+                <tr>
+                    <td>Need-Based Scholarship</td>
+                    <td>75,000 PKR</td>
+                    <td>15 October</td>
+                </tr>
+
+                <tr>
+                    <td>HEC Scholarship</td>
+                    <td>150,000 PKR</td>
+                    <td>20 October</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- REQUIREMENTS SECTION -->
+        <section>
+
+            <h2>Basic Requirements</h2>
+
+            <ul>
+                <li>Valid student ID</li>
+                <li>Academic transcript</li>
+                <li>Proof of enrollment</li>
+                <li>Required documents</li>
+            </ul>
+
+        </section>
+
+
+        <!-- APPLICATION SECTION -->
+        <section id="application">
+
+            <h2>Apply for Scholarship</h2>
+
+            <form>
+
+                <label for="name">Full Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <br><br>
+
+                <label for="program">Program:</label>
+
+                <select id="program">
+                    <option value="">Select your program</option>
+                    <option value="cis">CIS Engineering</option>
+                    <option value="ce">Computer Engineering</option>
+                    <option value="ee">Electrical Engineering</option>
+                </select>
+
+                <br><br>
+
+                <label for="about">Why do you need this scholarship?</label>
+
+                <br>
+
+                <textarea
+                    id="about"
+                    rows="5"
+                    cols="40"
+                    placeholder="Write your answer..."
+                ></textarea>
+
+                <br><br>
+
+                <button type="submit">Submit Application</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 University Scholarship Portal</p>
+    </footer>
+
+</body>
+
+</html>
