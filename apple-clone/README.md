@@ -21,6 +21,10 @@ This is **not affiliated with Apple** in any way — it's just a clone made for 
 * HTML
 * CSS
 * JavaScript
+* 
+## Live Demo
+
+https://ataifafaisal87.github.io/web-development/apple-clone/
 
 ## What I Practiced
 
